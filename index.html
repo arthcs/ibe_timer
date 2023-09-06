@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  body {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    font-size: 50px;
+    font-family:Arial, Helvetica, sans-serif
+    }
+  #numeros {
+    margin-top: auto;
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+  }
+  #btn{
+    display: flex;
+    justify-content: center;
+  }
+  img{
+    display: block;
+    margin-top: 350px;
+    margin-left: auto;
+    margin-right: auto ;
+  }
+  label{
+    padding-top: 25px;
+    display: flex;
+    justify-content: center;
+  }
+  .myButton {
+    box-shadow:inset 0px -3px 7px 0px #000000;
+    background:linear-gradient(to bottom, #000000 5%, #000000 100%);
+    background-color:#000000;
+    border-radius:3px;
+    border:1px solid #000000;
+    display:inline-block;
+    cursor:pointer;
+    color:#000000;
+    font-family:Arial;
+    font-size:15px;
+    padding:9px 23px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #000000;
+  }
+  .myButton:hover {
+    background:linear-gradient(to bottom, #0e0e0e 5%, #000000 100%);
+    background-color:rgb(11, 11, 11);
+    color:#fff;
+  }
+  .myButton:active {
+    position:relative;
+    top:1px;
+  }
+</style>
+<body>
+    <form name="form_main">
+      <img src="logo.png" alt="log">
+      <label>Iniciaremos em: <br></label>
+      <div id="numeros">
+        <span id="minute">00</span>:<span id="second">00</span>
+      </div>
+      <br />
+      <div id="btn">
+        <button class="myButton" type="button" name="start">start</button>
+        <button class="myButton" type="button" name="pause">pause</button>
+        <button class="myButton" type="button" name="reset">reset</button>
+      </div>
+    </form>
+</body>
+</html>
+
+<script>
+
+let minute = 10;
+let second = 0;
+
+let cron;
+
+document.form_main.start.onclick = () => start();
+document.form_main.pause.onclick = () => pause();
+document.form_main.reset.onclick = () => reset();
+
+function start() {
+  pause();
+  reset();
+  cron = setInterval(() => { timer(); }, 1000);
+}
+
+function pause() {
+  clearInterval(cron);
+}
+
+function reset() {
+
+  minute = 10;
+  second = 0;
+
+  document.getElementById('minute').innerText = '10';
+  document.getElementById('second').innerText = '00';
+
+}
+
+function timer() {
+
+  if (second == 0) {
+    minute--;
+    second = 59;
+  }else{
+    second--;
+  }
+
+  if (minute == 0 && second == 0) {
+    pause();
+  }
+
+  document.getElementById('minute').innerText = returnData(minute);
+  document.getElementById('second').innerText = returnData(second);
+}
+
+function returnData(input) {
+  return input >= 10 ? input : `0${input}`
+}
+</script>
