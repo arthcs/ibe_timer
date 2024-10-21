@@ -1,0 +1,55 @@
+body {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     /* Centraliza verticalmente */
+    height: 100vh;           /* O corpo terá 100% da altura da viewport */
+    margin: 0;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    font-size: 50px;
+    font-family:Arial, Helvetica, sans-serif
+    }
+  #numeros {
+    margin-top: auto;
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+  }
+  #btn{
+    display: flex;
+    justify-content: center;
+  }
+  img{
+    display: block;
+    max-width: 100%; /* Limita a imagem ao tamanho da tela */
+    height: auto;    /* Mantém a proporção da imagem */
+  }
+  label{
+    padding-top: 25px;
+    display: flex;
+    justify-content: center;
+  }
+  .myButton {
+    box-shadow:inset 0px -3px 7px 0px #000000;
+    background:linear-gradient(to bottom, #000000 5%, #000000 100%);
+    background-color:#000000;
+    border-radius:3px;
+    border:1px solid #000000;
+    display:inline-block;
+    cursor:pointer;
+    color:#000000;
+    font-family:Arial;
+    font-size:15px;
+    padding:9px 23px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #000000;
+  }
+  .myButton:hover {
+    background:linear-gradient(to bottom, #0e0e0e 5%, #000000 100%);
+    background-color:rgb(11, 11, 11);
+    color:#fff;
+  }
+  .myButton:active {
+    position:relative;
+    top:1px;
+  }
