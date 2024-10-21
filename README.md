@@ -1,7 +1,7 @@
 Comandos
 
 npm isntall
--Para instalar as ferramentas ta execurat
+- Para instalar as ferramentas ta execurat
 
 npm start
 - Para testar a aplicação, esta configurada em kiosk, para sair apertar Alt e clicar em "File / Exit" ou com o comando "Alt+F4"
